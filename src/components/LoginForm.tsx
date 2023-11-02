@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Message from "./Message";
 
 const FormContainer = styled.div`
   display: flex;
@@ -24,6 +23,16 @@ const Button = styled.button`
   background-color: #4caf50;
   color: white;
   cursor: pointer;
+`;
+
+const MessageContainer = styled.div`
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #4caf50;
+    border-radius: 5px;
+    background-color: #e7f7e4;
+    color: #4caf50;
+    font-size: 16px;
 `;
 
 const LoginForm: React.FC = () => {
@@ -67,7 +76,7 @@ const LoginForm: React.FC = () => {
                 <Button data-test='submit' type="submit">Login</Button>
             </form>
             {submitted && (
-                <Message data-test='message' message={`Welcome ${username}!`} />
+                <MessageContainer data-test='message'>Welcome {username}!</MessageContainer>
             )}
         </FormContainer>
     );
